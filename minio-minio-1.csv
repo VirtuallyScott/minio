@@ -1,46 +1,94 @@
 minio-minio-1
 date,stream,content
-2025/11/20 11:11:47,stdout,  DEVELOPMENT.2025-11-20T16-03-00Z
+2025/11/20 11:25:43,stdout,7[41m[37m[1mFATAL[22m[0m[0m 8[6C[31mUnable to initialize backend: [1mfile access denied[22m[0m
 
-2025/11/20 11:11:47,stdout,VERSION:
+2025/11/20 11:25:43,stdout,       1: github.com/minio/pkg/v3@v3.1.3/sync/errgroup/errgroup.go:123:errgroup.(*Group).Go.func1()
 
-2025/11/20 11:11:47,stdout,  
+2025/11/20 11:25:43,stdout,       2: cmd/format-erasure.go:568:cmd.initStorageDisksWithErrors.func1()
 
-2025/11/20 11:11:47,stdout,"  --version, -v                print the version
+2025/11/20 11:25:43,stdout,       3: cmd/object-api-common.go:63:cmd.newStorageAPI()
+
+2025/11/20 11:25:43,stdout,       4: cmd/xl-storage.go:272:cmd.newXLStorage()
+
+2025/11/20 11:25:43,stdout,       5: cmd/prepare-storage.go:96:cmd.bgFormatErasureCleanupTmp()
+
+2025/11/20 11:25:43,stdout,       6: cmd/logging.go:160:cmd.storageLogIf()
+
+2025/11/20 11:25:43,stdout,       7: internal/logger/logger.go:271:logger.LogIf()
+
+2025/11/20 11:25:43,stdout,"Error: [31;1munable to create (/data/.minio.sys/tmp) file access denied, drive may be faulty, please investigate (*fmt.wrapError)[0;22m
 "
-2025/11/20 11:11:47,stdout,"  --help, -h                   show help
+2025/11/20 11:25:43,stdout,Time: 16:25:43 UTC 11/20/2025
+
+2025/11/20 11:25:43,stdout,API: SYSTEM.storage
+
+2025/11/20 11:25:43,stdout,
+
+2025/11/20 11:25:43,stdout,       1: github.com/minio/pkg/v3@v3.1.3/sync/errgroup/errgroup.go:123:errgroup.(*Group).Go.func1()
+
+2025/11/20 11:25:43,stdout,       2: cmd/format-erasure.go:568:cmd.initStorageDisksWithErrors.func1()
+
+2025/11/20 11:25:43,stdout,       3: cmd/object-api-common.go:63:cmd.newStorageAPI()
+
+2025/11/20 11:25:43,stdout,       4: cmd/xl-storage.go:272:cmd.newXLStorage()
+
+2025/11/20 11:25:43,stdout,       5: cmd/prepare-storage.go:89:cmd.bgFormatErasureCleanupTmp()
+
+2025/11/20 11:25:43,stdout,       6: cmd/logging.go:160:cmd.storageLogIf()
+
+2025/11/20 11:25:43,stdout,       7: internal/logger/logger.go:271:logger.LogIf()
+
+2025/11/20 11:25:43,stdout,"Error: [31;1munable to rename (/data/.minio.sys/tmp -> /data/.minio.sys/tmp-old/8f650677-cc6a-494a-a62a-d371f4dcb097) file access denied, drive may be faulty, please investigate (*fmt.wrapError)[0;22m
 "
-2025/11/20 11:11:47,stdout,  --json                       output logs in JSON format
+2025/11/20 11:25:43,stdout,Time: 16:25:43 UTC 11/20/2025
 
-2025/11/20 11:11:47,stdout,  --anonymous                  hide sensitive information from logging
+2025/11/20 11:25:43,stdout,API: SYSTEM.storage
 
-2025/11/20 11:11:47,stdout,  --quiet                      disable startup and info messages
+2025/11/20 11:25:43,stdout,]11;?\[6n
 
-2025/11/20 11:11:47,stdout,"  --certs-dir value, -S value  path to certs directory (default: \"/home/minio/.minio/certs\")
+2025/11/20 11:24:06,stdout,7[41m[37m[1mFATAL[22m[0m[0m 8[6C[31mUnable to initialize backend: [1mfile access denied[22m[0m
+
+2025/11/20 11:24:06,stdout,       1: github.com/minio/pkg/v3@v3.1.3/sync/errgroup/errgroup.go:123:errgroup.(*Group).Go.func1()
+
+2025/11/20 11:24:06,stdout,       2: cmd/format-erasure.go:568:cmd.initStorageDisksWithErrors.func1()
+
+2025/11/20 11:24:06,stdout,       3: cmd/object-api-common.go:63:cmd.newStorageAPI()
+
+2025/11/20 11:24:06,stdout,       4: cmd/xl-storage.go:272:cmd.newXLStorage()
+
+2025/11/20 11:24:06,stdout,       5: cmd/prepare-storage.go:96:cmd.bgFormatErasureCleanupTmp()
+
+2025/11/20 11:24:06,stdout,       6: cmd/logging.go:160:cmd.storageLogIf()
+
+2025/11/20 11:24:06,stdout,       7: internal/logger/logger.go:271:logger.LogIf()
+
+2025/11/20 11:24:06,stdout,"Error: [31;1munable to create (/data/.minio.sys/tmp) file access denied, drive may be faulty, please investigate (*fmt.wrapError)[0;22m
 "
-2025/11/20 11:11:47,stdout,FLAGS:
+2025/11/20 11:24:06,stdout,Time: 16:24:06 UTC 11/20/2025
 
-2025/11/20 11:11:47,stdout,  
+2025/11/20 11:24:06,stdout,API: SYSTEM.storage
 
-2025/11/20 11:11:47,stdout,  server  start object storage server
+2025/11/20 11:24:06,stdout,
 
-2025/11/20 11:11:47,stdout,COMMANDS:
+2025/11/20 11:24:06,stdout,       1: github.com/minio/pkg/v3@v3.1.3/sync/errgroup/errgroup.go:123:errgroup.(*Group).Go.func1()
 
-2025/11/20 11:11:47,stdout,
+2025/11/20 11:24:06,stdout,       2: cmd/format-erasure.go:568:cmd.initStorageDisksWithErrors.func1()
 
-2025/11/20 11:11:47,stdout,  minio [FLAGS] COMMAND [ARGS...]
+2025/11/20 11:24:06,stdout,       3: cmd/object-api-common.go:63:cmd.newStorageAPI()
 
-2025/11/20 11:11:47,stdout,USAGE:
+2025/11/20 11:24:06,stdout,       4: cmd/xl-storage.go:272:cmd.newXLStorage()
 
-2025/11/20 11:11:47,stdout,
+2025/11/20 11:24:06,stdout,       5: cmd/prepare-storage.go:89:cmd.bgFormatErasureCleanupTmp()
 
-2025/11/20 11:11:47,stdout,"  Build high performance data infrastructure for machine learning, analytics and application data workloads with MinIO
+2025/11/20 11:24:06,stdout,       6: cmd/logging.go:160:cmd.storageLogIf()
+
+2025/11/20 11:24:06,stdout,       7: internal/logger/logger.go:271:logger.LogIf()
+
+2025/11/20 11:24:06,stdout,"Error: [31;1munable to rename (/data/.minio.sys/tmp -> /data/.minio.sys/tmp-old/b9a6e791-8a03-4ccc-8363-ce84a0f32db7) file access denied, drive may be faulty, please investigate (*fmt.wrapError)[0;22m
 "
-2025/11/20 11:11:47,stdout,DESCRIPTION:
+2025/11/20 11:24:06,stdout,Time: 16:24:06 UTC 11/20/2025
 
-2025/11/20 11:11:47,stdout,
+2025/11/20 11:24:06,stdout,API: SYSTEM.storage
 
-2025/11/20 11:11:47,stdout,  minio - High Performance Object Storage
-
-2025/11/20 11:11:47,stdout,]11;?\[6nNAME:
+2025/11/20 11:24:06,stdout,]11;?\[6n
 

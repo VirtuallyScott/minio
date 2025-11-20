@@ -26,6 +26,7 @@ Or manually:
 ```
 
 This will:
+
 - Build the MinIO binary for linux/amd64
 - Create a Docker image specifically for Synology
 - Export the image as `dist/minio-<version>-amd64.tar.gz`
@@ -54,15 +55,27 @@ Verify the image is loaded:
 sudo docker images | grep minio
 ```
 
-### 4. Run MinIO on Synology
+### 4. Fix Permissions (CRITICAL!)
 
-Create a data directory:
+MinIO runs as user ID 1000. You **must** fix permissions before starting:
 
 ```bash
 sudo mkdir -p /volume1/docker/minio/data
+sudo chown -R 1000:1000 /volume1/docker/minio/data
+sudo chmod -R 755 /volume1/docker/minio/data
 ```
 
-Run the container:
+Or use the provided script (copy from your build machine):
+
+```bash
+# On your Mac/build machine
+scp buildscripts/fix-synology-permissions.sh admin@your-synology:/tmp/
+
+# On Synology
+bash /tmp/fix-synology-permissions.sh /volume1/docker/minio/data
+```
+
+### 5. Run MinIO on Synology
 
 ```bash
 sudo docker run -d \
@@ -154,7 +167,15 @@ If MinIO can't write to /data, fix permissions:
 
 ```bash
 sudo chown -R 1000:1000 /volume1/docker/minio/data
+sudo chmod -R 755 /volume1/docker/minio/data
 ```
+
+**Common errors:**
+- `file access denied`
+- `unable to create (/data/.minio.sys/tmp)`
+- `unable to rename (/data/.minio.sys/tmp -> ...)`
+
+These all indicate permission issues. MinIO runs as UID 1000 and needs full access to the data directory.
 
 ### Container Won't Start
 

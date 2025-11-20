@@ -23,6 +23,25 @@ cd /volume1/docker
 gunzip -c minio-*.tar.gz | sudo docker load
 ```
 
+## Fix Permissions (IMPORTANT!)
+
+Before running MinIO, you must fix the permissions on your data directory:
+
+```bash
+# On your Synology (via SSH)
+sudo mkdir -p /volume1/docker/minio/data
+sudo chown -R 1000:1000 /volume1/docker/minio/data
+sudo chmod -R 755 /volume1/docker/minio/data
+```
+
+Or use the provided script:
+```bash
+# Copy the script to your Synology
+scp buildscripts/fix-synology-permissions.sh admin@your-synology:/tmp/
+# Run it
+ssh admin@your-synology "bash /tmp/fix-synology-permissions.sh /volume1/docker/minio/data"
+```
+
 ## Run on Synology
 
 ```bash
