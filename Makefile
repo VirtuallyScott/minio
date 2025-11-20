@@ -215,6 +215,10 @@ docker: build ## builds minio docker container
 	@echo "Building minio docker image '$(TAG)'"
 	@docker build -q --no-cache -t $(TAG) . -f Dockerfile
 
+docker-synology: ## builds and exports minio docker image for Synology (linux/amd64)
+	@echo "Building minio docker image for Synology NAS"
+	@bash $(PWD)/buildscripts/build-for-synology.sh
+
 test-resiliency: build
 	@echo "Running resiliency tests"
 	@(DOCKER_COMPOSE_FILE=$(PWD)/docs/resiliency/docker-compose.yaml env bash $(PWD)/docs/resiliency/resiliency-tests.sh)

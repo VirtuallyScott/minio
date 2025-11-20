@@ -1,0 +1,47 @@
+FROM golang:1.24-alpine AS build
+
+ENV GOPATH=/go
+ENV CGO_ENABLED=0
+ENV GOOS=linux
+ENV GOARCH=amd64
+
+WORKDIR /build
+
+# Install ca-certificates for HTTPS
+RUN apk add -U --no-cache ca-certificates
+
+# Copy the pre-built binary
+COPY dist/minio-amd64 /go/bin/minio
+RUN chmod +x /go/bin/minio
+
+FROM alpine:latest
+
+LABEL name="MinIO" \
+      vendor="VirtuallyScott Lab" \
+      maintainer="VirtuallyScott Lab" \
+      description="MinIO High Performance Object Storage - Custom build for lab environment"
+
+ENV MINIO_UPDATE="off" \
+    MINIO_CONFIG_ENV_FILE=config.env
+
+# Install ca-certificates and create minio user
+RUN apk add -U --no-cache ca-certificates && \
+    addgroup -g 1000 minio && \
+    adduser -D -u 1000 -G minio minio && \
+    mkdir -p /data && \
+    chown -R minio:minio /data
+
+# Copy binary and entrypoint
+COPY --from=build /go/bin/minio /usr/bin/minio
+COPY dockerscripts/docker-entrypoint.sh /usr/bin/docker-entrypoint.sh
+RUN chmod +x /usr/bin/docker-entrypoint.sh
+
+# Set up volumes and ports
+EXPOSE 9000 9001
+VOLUME ["/data"]
+
+# Run as minio user
+USER minio
+
+ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
+CMD ["minio"]
