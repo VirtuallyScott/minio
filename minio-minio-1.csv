@@ -1,0 +1,46 @@
+minio-minio-1
+date,stream,content
+2025/11/20 11:11:47,stdout,  DEVELOPMENT.2025-11-20T16-03-00Z
+
+2025/11/20 11:11:47,stdout,VERSION:
+
+2025/11/20 11:11:47,stdout,  
+
+2025/11/20 11:11:47,stdout,"  --version, -v                print the version
+"
+2025/11/20 11:11:47,stdout,"  --help, -h                   show help
+"
+2025/11/20 11:11:47,stdout,  --json                       output logs in JSON format
+
+2025/11/20 11:11:47,stdout,  --anonymous                  hide sensitive information from logging
+
+2025/11/20 11:11:47,stdout,  --quiet                      disable startup and info messages
+
+2025/11/20 11:11:47,stdout,"  --certs-dir value, -S value  path to certs directory (default: \"/home/minio/.minio/certs\")
+"
+2025/11/20 11:11:47,stdout,FLAGS:
+
+2025/11/20 11:11:47,stdout,  
+
+2025/11/20 11:11:47,stdout,  server  start object storage server
+
+2025/11/20 11:11:47,stdout,COMMANDS:
+
+2025/11/20 11:11:47,stdout,
+
+2025/11/20 11:11:47,stdout,  minio [FLAGS] COMMAND [ARGS...]
+
+2025/11/20 11:11:47,stdout,USAGE:
+
+2025/11/20 11:11:47,stdout,
+
+2025/11/20 11:11:47,stdout,"  Build high performance data infrastructure for machine learning, analytics and application data workloads with MinIO
+"
+2025/11/20 11:11:47,stdout,DESCRIPTION:
+
+2025/11/20 11:11:47,stdout,
+
+2025/11/20 11:11:47,stdout,  minio - High Performance Object Storage
+
+2025/11/20 11:11:47,stdout,]11;?\[6nNAME:
+

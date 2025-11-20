@@ -165,9 +165,14 @@ sudo docker logs minio
 ```
 
 Common issues:
+- **Showing help instead of starting**: The default CMD now includes `server /data --console-address ':9001'`, but if you see help output, explicitly add the command:
+  ```bash
+  docker run ... minio/minio:latest server /data --console-address ':9001'
+  ```
 - Password too short (must be 8+ characters)
 - Port already in use
 - Insufficient disk space
+- Permission issues with /data directory
 
 ## Updating MinIO
 

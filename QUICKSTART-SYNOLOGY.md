@@ -26,6 +26,18 @@ gunzip -c minio-*.tar.gz | sudo docker load
 ## Run on Synology
 
 ```bash
+# Basic run command
+sudo docker run -d \
+  --name minio \
+  --restart unless-stopped \
+  -p 9000:9000 \
+  -p 9001:9001 \
+  -e MINIO_ROOT_USER=admin \
+  -e MINIO_ROOT_PASSWORD=YourSecurePassword123 \
+  -v /volume1/docker/minio/data:/data \
+  minio/minio:latest
+
+# Or if you need to override the command:
 sudo docker run -d \
   --name minio \
   --restart unless-stopped \

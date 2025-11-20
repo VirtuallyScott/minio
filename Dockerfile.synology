@@ -44,4 +44,4 @@ VOLUME ["/data"]
 USER minio
 
 ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
-CMD ["minio"]
+CMD ["server", "/data", "--console-address", ":9001"]
