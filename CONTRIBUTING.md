@@ -23,7 +23,7 @@ ls $(go env GOPATH)/bin/minio
 $ cd minio
 $ git remote add upstream https://github.com/minio/minio
 $ git fetch upstream
-$ git merge upstream/master
+$ git merge upstream/main
 ...
 ```
 
